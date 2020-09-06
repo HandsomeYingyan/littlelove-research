@@ -1,0 +1,918 @@
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Linux version 3.4.39 (eagle@chuangmi) (gcc version 5.2.1 (OpenWrt/Linaro GCC 5.2-2015.11-2 2016-11-07) ) #35 SMP PREEMPT Fri Jun 15 01:51:53 UTC 2018
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine: sun8i
+[    0.000000] Initialized persistent memory from 43080800-430907ff
+[    0.000000] cma: CMA: reserved 32 MiB at 46000000
+[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+[    0.000000] On node 0 totalpages: 32768
+[    0.000000] free_area_init_node: node 0, pgdat c06b23c0, node_mem_map c06f3000
+[    0.000000]   Normal zone: 288 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 32480 pages, LIFO batch:7
+[    0.000000] script_init enter!
+[    0.000000] script_init exit!
+[    0.000000] PERCPU: Embedded 7 pages/cpu @c0826000 s6464 r8192 d14016 u32768
+[    0.000000] pcpu-alloc: s6464 r8192 d14016 u32768 alloc=8*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 32480
+[    0.000000] Kernel command line: boot_type=0 uboot_hash=2701bad684 uboot_version=1 disp_para=1 fb_base=0x0 config_size=40960 boot.serialno=2857885c1244ffffcf65 boot.hardware=sun8i console=ttyS0,115200 root=/dev/nandc rootwait init=/sbin/init ion_cma_list=8m,32m,64m,128m,256m loglevel=8 partitions=env@nanda:kernel1@nandb:rootfs1@nandc:kernel2@nandd:rootfs2@nande:misc@nandf:private@nandg:crashlog@nandh:UDISK@nandi
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Memory: 128MB = 128MB total
+[    0.000000] Memory: 89564k/89564k available, 41508k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xc8800000 - 0xff000000   ( 872 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xc8000000   ( 128 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc0630000   (6304 kB)
+[    0.000000]       .init : 0xc0630000 - 0xc065b940   ( 175 kB)
+[    0.000000]       .data : 0xc065c000 - 0xc06b3120   ( 349 kB)
+[    0.000000]        .bss : 0xc06b3fa4 - 0xc06f20a0   ( 249 kB)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:416
+[    0.000000] Architected local timer running at 24.00MHz.
+[    0.000000] Switching to timer-based delay loop
+[    0.000000] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 178956ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.000197] Calibrating delay loop (skipped), value calculated using timer frequency.. 4800.00 BogoMIPS (lpj=24000000)
+[    0.000216] pid_max: default: 4096 minimum: 301
+[    0.000349] Security Framework initialized
+[    0.000425] Mount-cache hash table entries: 512
+[    0.001258] CPU: Testing write buffer coherency: ok
+[    0.001482] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.001492] [sunxi_smp_prepare_cpus] enter
+[    0.001529] Setting up static identity map for 0x404a0508 - 0x404a0560
+[    0.006115] CPU1: Booted secondary processor
+[    0.006181] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.010000] CPU2: Booted secondary processor
+[    0.010000] CPU2: thread -1, cpu 2, socket 0, mpidr 80000002
+[    0.010340] CPU3: Booted secondary processor
+[    0.010340] CPU3: thread -1, cpu 3, socket 0, mpidr 80000003
+[    0.010452] Brought up 4 CPUs
+[    0.010452] SMP: Total of 4 processors activated (19200.00 BogoMIPS).
+[    0.014385] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.014765] pinctrl core: initialized pinctrl subsystem
+[    0.021112] NET: Registered protocol family 16
+[    0.021782] DMA: preallocated 2048 KiB pool for atomic coherent allocations
+[    0.021808] script_sysfs_init success
+[    0.021837] sunxi_dump_init success
+[    0.022803] gpiochip_add: registered GPIOs 0 to 383 on device: sunxi-pinctrl
+[    0.024159] sunxi-pinctrl sunxi-pinctrl: initialized sunXi PIO driver
+[    0.024159] gpiochip_add: registered GPIOs 1024 to 1031 on device: axp-pinctrl
+[    0.024159] persistent_ram: uncorrectable error in header
+[    0.024159] persistent_ram: no valid data in buffer (sig = 0x87918333)
+[    0.031950] console [ram-1] enabled
+[    0.032303] [sunxi-module]: [sunxi-module.0] probe success
+[    0.032461] script config pll3 to 297 Mhz
+[    0.032594] script config pll4 to 300 Mhz
+[    0.032849] script config pll6 to 600 Mhz
+[    0.032980] script config pll8 to 408 Mhz
+[    0.033116] script config pll9 to 480 Mhz
+[    0.033350] script config pll10 to 297 Mhz
+[    0.033473] sunxi_default_clk_init
+[    0.033597] try to set pll6ahb1 to 200000000
+[    0.033868] try to set ahb clk source to pll6ahb1
+[    0.033994] set ahb clk source to pll6ahb1
+[    0.034223] try to set ahb1 to 200000000
+[    0.034351] try to set apb1 to 100000000
+[    0.040233] bio: create slab <bio-0> at 0
+[    0.040608] [ARISC] :sunxi-arisc driver v1.02
+[    0.058853] [ARISC] :arisc version: [v0.1.33]
+[    0.065476] [ARISC] :sunxi-arisc driver v1.02 startup succeeded
+[    0.065809] pwm module init!
+[    0.067365] usbcore: registered new interface driver usbfs
+[    0.067365] usbcore: registered new interface driver hub
+[    0.067365] usbcore: registered new device driver usb
+[    0.067365] twi_chan_cfg()340 - [twi0] has no twi_regulator.
+[    0.067365] twi_chan_cfg()340 - [twi1] has no twi_regulator.
+[    0.067365] twi_chan_cfg()340 - [twi2] has no twi_regulator.
+[    0.067365] Linux video capture interface: v2.00
+[    0.070025] [axp22_init_chip] read axp22 ic type=0x6
+[    0.071762] current_limit = 700000
+[    0.080258] Advanced Linux Sound Architecture Driver Version 1.0.25.
+[    0.081029] Bluetooth: Core ver 2.16
+[    0.081205] NET: Registered protocol family 31
+[    0.081333] Bluetooth: HCI device and connection manager initialized
+[    0.081568] Bluetooth: HCI socket layer initialized
+[    0.081695] Bluetooth: L2CAP socket layer initialized
+[    0.081941] Bluetooth: SCO socket layer initialized
+[    0.082274] cfg80211: Calling CRDA to update world regulatory domain
+[    0.083091] Switching to clocksource arch_sys_counter
+[    0.083519] FS-Cache: Loaded
+[    0.083855] CacheFiles: Loaded
+[    0.086959] leds_probe.....
+[    0.087136] [LGC]:set_mux_pin_to_gpio = 225
+[    0.088297] LGC gpio group = 7........
+[    0.088842] hci: ERR: get ehci1 abh clk failed.
+[    0.088971] hci: ERR: clock_init failed
+[    0.089109] hci: ERR: get ohci1 abh clk failed.
+[    0.089341] hci: ERR: clock_init failed
+[    0.090880] NET: Registered protocol family 2
+[    0.091364] IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.091982] TCP established hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.092285] TCP bind hash table entries: 4096 (order: 3, 49152 bytes)
+[    0.092481] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.092711] TCP: reno registered
+[    0.093097] NET: Registered protocol family 1
+[    0.093905] [pm]aw_pm_init!
+[    0.094035] standby_mode = 1. 
+[    0.094161] wakeup src cnt is : 3. 
+[    0.094288] [exstandby]leave extended_standby_enable_wakeup_src : event 0x800000
+[    0.094520] [exstandby]leave extended_standby_enable_wakeup_src : wakeup_gpio_map 0x80
+[    0.094752] [exstandby]leave extended_standby_enable_wakeup_src : wakeup_gpio_group 0x0
+[    0.094986] [exstandby]leave extended_standby_enable_wakeup_src : event 0x800000
+[    0.095113] [exstandby]leave extended_standby_enable_wakeup_src : wakeup_gpio_map 0x280
+[    0.095345] [exstandby]leave extended_standby_enable_wakeup_src : wakeup_gpio_group 0x0
+[    0.095578] [exstandby]leave extended_standby_enable_wakeup_src : event 0x800000
+[    0.095705] [exstandby]leave extended_standby_enable_wakeup_src : wakeup_gpio_map 0x284
+[    0.095936] [exstandby]leave extended_standby_enable_wakeup_src : wakeup_gpio_group 0x0
+[    0.096190] sunxi_reg_init enter
+[    0.096880] audit: initializing netlink socket (disabled)
+[    0.097042] type=2000 audit(0.090:1): initialized
+[    0.098369] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.098546] jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    0.099062] msgmni has been set to 238
+[    0.100388] io scheduler noop registered
+[    0.100626] io scheduler deadline registered
+[    0.100821] io scheduler cfq registered (default)
+[    0.101109] sw_uart_get_devinfo()1503 - uart0 has no uart_regulator.
+[    0.101347] sw_uart_get_devinfo()1503 - uart1 has no uart_regulator.
+[    0.102034] uart0: ttyS0 at MMIO 0x1c28000 (irq = 32) is a SUNXI
+[    0.102166] sw_uart_pm()890 - uart0 clk is already enable
+[    0.102404] sw_console_setup()1233 - console setup baud 115200 parity n bits 8, flow n
+[    0.295130] console [ttyS0] enabled
+[    0.393923] uart1: ttyS1 at MMIO 0x1c28400 (irq = 33) is a SUNXI
+[    0.496210] loop: module loaded
+[    0.595265] [NAND]panic_buff_handle 0xc6200000 ,0x46200000
+[    1.049617] [NAND][NAND]nand init start, nand0_used_flag is 1
+[    1.056231] [NAND]nand_cache_level err! 0[NAND]nand_capacity_level err! 0
+[    1.064011] regisger ISP =====================
+[    1.069183] [NAND]nand init start
+[    1.072987] NandHwInit: Start Nand Hardware initializing .....
+[    1.079679] kernel:nand version: 3 5009 20171214 16671134 
+[    1.086498] [NAND] channel cnt is 1
+[    1.090494] ndfc version: 1 
+[    1.093907] ndfc dma mode: MBUS DMA
+[    1.097890] pin count:19 
+[    1.101034] NAND_ClkRequest: get pll6 rate 600000000HZ
+[    1.107131] nand:get voltage axp22_dcdc1 ok:c5a40900
+[    1.112841] Reset NDFC 0
+[    1.115766] NFC Randomizer start. 
+[    1.119768] NFC_ResetChip: 0x101, 0x100 0x10095
+[    1.124924] NFC_ResetChip: 0xff, ch: 0
+[    1.129256] [PHY_DBG] CH 0 Nand flash chip id is:0x98 0xf1 0x80 0x15 0xf2 0x16
+[    1.137502] nand id of two channel is not the same, set to 1 channel mode
+[    1.145266] [SCAN_DBG] Nand flash chip id is:0x98 0xf1 0x80 0x15 0xf2 0x16
+[    1.153027] [SCAN_DBG] NandTwoPlaneOp: 0, DriverTwoPlaneOPCfg: 0, 0xffdffdff 
+[    1.161178] nand_para0, id_number_ctl, nand type err! 0
+[    1.167090] _UpdateExtAccessFreqPara: no para.
+[    1.172252] NFC_ResetChip: 0x1000101, 0x100 0x10095
+[    1.177777] NFC_ResetChip: 0xff, ch: 0
+[    1.182089] [PHY_DBG] CH 0 Nand flash chip id is:0x0 0x0 0x0 0x0 0x0 0x0
+[    1.189746] NFC_ResetChip: 0x2000109, 0x100 0x10095
+[    1.195281] NFC_ResetChip: 0xff, ch: 0
+[    1.199665] wrong Rb connect Mode, chip = 2 ,RbConnectMode = 1 
+[    1.206382] [PHY_DBG] CH 0 Nand flash chip id is:0x0 0x0 0x0 0x0 0x0 0x0
+[    1.214051] NFC_ResetChip: 0x3000109, 0x100 0x10095
+[    1.219576] NFC_ResetChip: 0xff, ch: 0
+[    1.223970] wrong Rb connect Mode, chip = 3 ,RbConnectMode = 1 
+[    1.230685] [PHY_DBG] CH 0 Nand flash chip id is:0x0 0x0 0x0 0x0 0x0 0x0
+[    1.238341] Reset NDFC 0
+[    1.241276] PageCachePool.PageCache0: 0xc59bc000
+[    1.246516] PageCachePool.PageCache1: 0xc5a86000
+[    1.251873] PageCachePool.PageCache2: 0xc5a87000
+[    1.257111] PageCachePool.PageCache3: 0xc5a60000
+[    1.262466] PageCachePool.PageCache4: 0xc5a61000
+[    1.267702] PageCachePool.SpareCache: 0xc599e580
+[    1.272951] PageCachePool.TmpPageCache: 0xc5a62000
+[    1.278487] PageCachePool.TmpPageCache1: 0xc5a63000
+[    1.284026] PHY_ChangeMode: sclk0 will be changed! 10 -> 30
+[    1.290440] PHY_ChangeMode: before check blank page, 0x101, 0x100, 0x10095, 0x21f
+[    1.299666] _check_scan_data, it is a free page(type 1), block 4
+[    1.306567] _check_scan_data, read error, block 4 !
+[    1.312886] _check_scan_data, it is a free page(type 1), block 5
+[    1.319770] _check_scan_data, read error, block 5 !
+[    1.326088] _check_scan_data, it is a free page(type 1), block 6
+[    1.332986] _check_scan_data, read error, block 6 !
+[    1.339292] _check_scan_data, it is a free page(type 1), block 7
+[    1.346189] _check_scan_data, read error, block 7 !
+[    1.352053] _check_scan_data, ok, block 8
+[    1.356719] _check_scan_data, valid data for ddr scan, block 8
+[    1.363321] PHY_ChangeMode: valid burned data!
+[    1.368365] PHY_ChangeMode: timing_change 1,  sclk0_bak 10, sclk0 30!
+[    1.375751] _get_right_timing_para, set edo to 1 for sdr nand.
+[    1.382462] Physic_Info_Read start!!
+[    1.386540] Physic_Info_Get_Offset start!!
+[    1.392732] physic info start_block 4
+[    1.397357] physic info start_block 5
+[    1.401889] physic info start_block 6
+[    1.406408] physic info start_block 7
+[    1.411044] physic info start_block 8
+[    1.415373] Physic_Info_Get_One_Copy start!!
+[    1.421310] block 14 page 56
+[    1.424772] block 14 page 57
+[    1.428339] block 14 page 58
+[    1.431815] block 14 page 59
+[    1.435277] block 14 page 60
+[    1.438739] block 14 page 61
+[    1.442322] block 14 page 62
+[    1.445784] block 14 page 63
+[    1.449399] block 15 page 0
+[    1.452778] block 15 page 1
+[    1.456249] block 15 page 2
+[    1.459615] block 15 page 3
+[    1.462991] block 15 page 4
+[    1.466356] block 15 page 5
+[    1.469826] block 15 page 6
+[    1.473204] block 15 page 7
+[    1.476656] physic info copy is ok
+[    1.480562] NandGetPhyInfoFlag !!!! 
+[    1.484746] 
+[    1.484749] 
+[    1.488270] [SCAN_DBG] ==============Nand Architecture Parameter==============
+[    1.496515] [SCAN_DBG]    Nand Chip ID:         0x1580f198 0xffff16f2
+[    1.503786] [SCAN_DBG]    Nand Channel Count:   0x1
+[    1.509418] [SCAN_DBG]    Nand Chip Count:      0x1
+[    1.514951] [SCAN_DBG]    Nand Chip Connect:    0x1
+[    1.520486] [SCAN_DBG]    Nand Rb Connect Mode:      0x1
+[    1.526492] [SCAN_DBG]    Sector Count Of Page: 0x4
+[    1.532027] [SCAN_DBG]    Page Count Of Block:  0x40
+[    1.537754] [SCAN_DBG]    Block Count Of Die:   0x400
+[    1.543481] [SCAN_DBG]    Plane Count Of Die:   0x2
+[    1.549112] [SCAN_DBG]    Die Count Of Chip:    0x1
+[    1.554646] [SCAN_DBG]    Bank Count Of Chip:   0x1
+[    1.560285] [SCAN_DBG]    Optional Operation:   0x4000008c
+[    1.566485] [SCAN_DBG]    Access Frequency:     0x1e
+[    1.572115] [SCAN_DBG]    ECC Mode:             0x0
+[    1.577745] [SCAN_DBG]    Read Retry Type:      0x0
+[    1.583280] [SCAN_DBG]    DDR Type:             0x0
+[    1.588910] [SCAN_DBG] =======================================================
+[    1.588916] 
+[    1.598913] [SCAN_DBG] ==============Optional Operaion Parameter==============
+[    1.607052] [SCAN_DBG]    MultiPlaneReadCmd:      0x0, 0x30
+[    1.613464] [SCAN_DBG]    MultiPlaneWriteCmd:     0x10, 0x80
+[    1.619857] [SCAN_DBG]    MultiPlaneCopyReadCmd:  0x0, 0x0, 0x35
+[    1.626761] [SCAN_DBG]    MultiPlaneCopyWriteCmd: 0x85, 0x11, 0x80
+[    1.633744] [SCAN_DBG]    MultiPlaneStatusCmd:    0x70
+[    1.639664] [SCAN_DBG]    InterBnk0StatusCmd:     0x70
+[    1.645487] [SCAN_DBG]    InterBnk1StatusCmd:     0x70
+[    1.651416] [SCAN_DBG]    BadBlockFlagPosition:   0x2
+[    1.657134] [SCAN_DBG]    MultiPlaneBlockOffset:  0x1
+[    1.662968] [SCAN_DBG] =======================================================
+[    1.671106] kernel:nand info: 1580f198 ffff16f2 4000008c 0 0 
+[    1.678416] nand_para0, sorting_flag, nand type err! 0
+[    1.684241] 
+[    1.686004] [FORMAT_DBG] ===========Logical Architecture Parameter===========
+[    1.694151] [FORMAT_DBG]    Page Count of Logic Block:  0x40
+[    1.700554] [FORMAT_DBG]    Sector Count of Logic Page: 0x8
+[    1.706955] [FORMAT_DBG]    Block Count of Die:         0x200
+[    1.713454] [FORMAT_DBG]    Die Count:                  0x1
+[    1.719854] [FORMAT_DBG] ===================================================
+[    1.727804] NandHwInit: End Nand Hardware initializing ..... OK!
+[    1.734721] [ND]boot start 
+[    1.737940] [ND]partition->size :225280
+[    1.742428] [ND]partition->cross_talk :0
+[    1.746892] [ND]partition->attribute :0
+[    1.751271] [ND]partition->start.Chip_NO :0
+[    1.756129] [ND]partition->start.Block_NO :23
+[    1.761085] [ND]partition->end.Chip_NO :0
+[    1.765645] [ND]partition->end.Block_NO :511
+[    1.770611] [ND]partition->nand_disk[0].size :32768
+[    1.776137] [ND]partition->nand_disk[0].type :0
+[    1.781394] [ND]partition->nand_disk[1].size :2048
+[    1.786823] [ND]partition->nand_disk[1].type :0
+[    1.791972] [ND]partition->nand_disk[2].size :12288
+[    1.797602] [ND]partition->nand_disk[2].type :0
+[    1.802752] [ND]partition->nand_disk[3].size :65536
+[    1.808380] [ND]partition->nand_disk[3].type :0
+[    1.813529] [ND]partition->nand_disk[4].size :12288
+[    1.819053] [ND]partition->nand_disk[4].type :0
+[    1.824307] [ND]partition->nand_disk[5].size :65536
+[    1.829832] [ND]partition->nand_disk[5].type :0
+[    1.835087] [ND]partition->nand_disk[6].size :2048
+[    1.840526] [ND]partition->nand_disk[6].type :0
+[    1.845771] [ND]partition->nand_disk[7].size :2048
+[    1.851209] [ND]partition->nand_disk[7].type :0
+[    1.856349] [ND]partition->nand_disk[8].size :2048
+[    1.861892] [ND]partition->nand_disk[8].type :0
+[    1.867031] [ND]partition->nand_disk[9].size :28672
+[    1.872672] [ND]partition->nand_disk[9].type :0
+[    1.877811] [ND]partition->nand_disk[10].size :-1
+[    1.883159] [ND]partition->nand_disk[10].type :-1
+[    1.888597] [ND]partition->nand_disk[11].size :-1
+[    1.893941] [ND]partition->nand_disk[11].type :-1
+[    1.899379] [ND]partition->nand_disk[12].size :-1
+[    1.904722] [ND]partition->nand_disk[12].type :-1
+[    1.910064] [ND]partition->nand_disk[13].size :-1
+[    1.915501] [ND]partition->nand_disk[13].type :-1
+[    1.920833] [ND]partition->nand_disk[14].size :-1
+[    1.926269] [ND]partition->nand_disk[14].type :-1
+[    1.931611] [ND]partition->nand_disk[15].size :-1
+[    1.937047] [ND]partition->nand_disk[15].type :-1
+[    1.942391] [ND]partition->nand_disk[16].size :-1
+[    1.947724] [ND]partition->nand_disk[16].type :-1
+[    1.953171] [ND]partition->nand_disk[17].size :-1
+[    1.958503] [ND]partition->nand_disk[17].type :-1
+[    1.963951] [ND]partition->nand_disk[18].size :-1
+[    1.969284] [ND]partition->nand_disk[18].type :-1
+[    1.974626] [ND]partition->nand_disk[19].size :-1
+[    1.980073] [ND]partition->nand_disk[19].type :-1
+[    1.985405] [ND]partition->nand_disk[20].size :-1
+[    1.990851] [ND]partition->nand_disk[20].type :-1
+[    1.996183] [ND]partition->nand_disk[21].size :-1
+[    2.001638] [ND]partition->nand_disk[21].type :-1
+[    2.006968] [ND]partition->nand_disk[22].size :-1
+[    2.012311] [ND]partition->nand_disk[22].type :-1
+[    2.017747] [ND]partition->nand_disk[23].size :-1
+[    2.023089] [ND]partition->nand_disk[23].type :-1
+[    2.028529] [NE]partition_num: 0,size :0x37000,cross_talk 0
+[    2.034836] [NE]part mbr size: 0x8000 type: 0
+[    2.039782] [NE]part env size: 0x800 type: 0
+[    2.044768] [NE]part kernel1 size: 0x3000 type: 0
+[    2.050113] [NE]part rootfs1 size: 0x10000 type: 0
+[    2.055647] [NE]part kernel2 size: 0x3000 type: 0
+[    2.060982] [NE]part rootfs2 size: 0x10000 type: 0
+[    2.066515] [NE]part misc size: 0x800 type: 0
+[    2.071473] [NE]part private size: 0x800 type: 0
+[    2.076708] [NE]part crashlog size: 0x800 type: 0
+[    2.082157] [NE]part UDISK size: 0x7000 type: 0
+[    2.087339] [ND]factory bad block:0,384 PartitionNO:0
+[    2.093186] [ND]build 1 phy_partition !
+[    2.097554] [ND]nand_info->type :0
+[    2.101449] [ND]nand_info->SectorNumsPerPage :8
+[    2.106694] [ND]nand_info->BytesUserData :16
+[    2.111554] [ND]nand_info->PageNumsPerBlk :64
+[    2.116500] [ND]nand_info->BlkPerChip :512
+[    2.121271] [ND]nand_info->FirstBuild :0
+[    2.125735] [ND]nand_info->FullBitmap :1610612883
+[    2.131076] [ND]nand_info->bad_block_addr.Chip_NO :0
+[    2.136801] [ND]nand_info->bad_block_addr.Block_NO :0
+[    2.142533] [ND]nand_info->mbr_block_addr.Chip_NO :0
+[    2.148259] [ND]nand_info->mbr_block_addr.Block_NO :0
+[    2.153986] [ND]nand_info->no_used_block_addr.Chip_NO :0
+[    2.160107] [ND]nand_info->no_used_block_addr.Block_NO :23
+[    2.166306] [ND]nand_info->new_bad_block_addr.Chip_NO :0
+[    2.172428] [ND]nand_info->new_bad_block_addr.Block_NO :0
+[    2.178531] [ND]nand_info->new_bad_page_addr :65535
+[    2.184170] [ND]nand_info->partition_nums :1
+[    2.189019] [ND]sizeof partition:2384
+[    2.193203] [ND]nand_info->partition:0:
+[    2.197673] [ND]size:0x37000
+[    2.200989] [ND]cross_talk:0x0
+[    2.204488] [ND]attribute:0x0
+[    2.207891] [ND]start: chip:0 block:23
+[    2.212278] [ND]end  : chip:0 block:511
+[    2.216645]  check_phyisc start.
+[    2.225239] uboot->sys_mode 0 
+[    2.228845] uboot->use_lsb_page 0 
+[    2.232745] uboot->copys 4 
+[    2.235956] uboot->uboot_len 901120 
+[    2.240044] uboot->total_len 933888 
+[    2.244228] uboot->uboot_pages 440 
+[    2.248208] uboot->total_pages 456 
+[    2.252198] uboot->blocks_per_total 8 
+[    2.256573] uboot->page_offset_for_nand_info 440 
+[    2.261913] uboot->uboot_block
+[    2.265411]  8 16 24 32 0 0 0 0 0 0 0
+[    2.271029]  0 0 0 0 0 0 0 0 0 0
+[    2.275930]  0 0 0 0 0 0 0 0 0
+[    2.354212] nand_read_uboot_one ok 0 
+[    2.432150] nand_read_uboot_one ok 1 
+[    2.510022] nand_read_uboot_one ok 2 
+[    2.587882] nand_read_uboot_one ok 3 
+[    2.592180]  check_phyisc end.
+[    2.595894] [NAND]nand_probe
+[    2.599232] [NAND]nand type err!
+[    2.603151] [ND]nand_partition0
+[    2.606909] [ND]nftl start:489,49
+[    2.610819] [ND]first
+[    2.649926] _ReadCheckSpare: filled invalid page(0,165,0)...
+[    2.657463] _ReadCheckSpare: filled invalid page(0,169,0)...
+[    2.664383] _ReadCheckSpare: filled invalid page(0,171,0)...
+[    2.671152] _ReadCheckSpare: filled invalid page(0,172,0)...
+[    2.677804] _ReadCheckSpare: filled invalid page(0,173,0)...
+[    2.685083] _ReadCheckSpare: filled invalid page(0,176,0)...
+[    2.691747] _ReadCheckSpare: filled invalid page(0,177,0)...
+[    2.698504] _ReadCheckSpare: filled invalid page(0,178,0)...
+[    2.705931] _ReadCheckSpare: filled invalid page(0,182,0)...
+[    2.713464] _ReadCheckSpare: filled invalid page(0,186,0)...
+[    2.720372] _ReadCheckSpare: filled invalid page(0,188,0)...
+[    2.754908] _ReadCheckSpare: filled invalid page(0,298,0)...
+[    2.761573] _ReadCheckSpare: filled invalid page(0,299,0)...
+[    2.768331] _ReadCheckSpare: filled invalid page(0,300,0)...
+[    2.774994] _ReadCheckSpare: filled invalid page(0,301,0)...
+[    2.781762] _ReadCheckSpare: filled invalid page(0,302,0)...
+[    2.788413] _ReadCheckSpare: filled invalid page(0,303,0)...
+[    2.795181] _ReadCheckSpare: filled invalid page(0,304,0)...
+[    2.801845] _ReadCheckSpare: filled invalid page(0,305,0)...
+[    2.808601] _ReadCheckSpare: filled invalid page(0,306,0)...
+[    2.815263] _ReadCheckSpare: filled invalid page(0,307,0)...
+[    2.823826] _ReadCheckSpare: filled invalid page(0,315,0)...
+[    2.836669] _ReadCheckSpare: filled invalid page(0,340,0)...
+[    2.845995] _ReadCheckSpare: filled invalid page(0,351,0)...
+[    2.860666] [ND]bad block: 361
+[    2.889674] _ReadCheckSpare: filled invalid page(0,483,0)...
+[    2.898760] _ReadCheckSpare: filled invalid page(0,493,0)...
+[    2.905681] _ReadCheckSpare: filled invalid page(0,495,0)...
+[    2.912708] _ReadCheckSpare: filled invalid page(0,497,0)...
+[    2.919359] _ReadCheckSpare: filled invalid page(0,498,0)...
+[    2.926126] _ReadCheckSpare: filled invalid page(0,499,0)...
+[    2.932789] _ReadCheckSpare: filled invalid page(0,500,0)...
+[    2.939802] _ReadCheckSpare: filled invalid page(0,502,0)...
+[    2.946464] _ReadCheckSpare: filled invalid page(0,503,0)...
+[    2.953231] _ReadCheckSpare: filled invalid page(0,504,0)...
+[    2.960655] _ReadCheckSpare: filled invalid page(0,508,0)...
+[    2.967411] _ReadCheckSpare: filled invalid page(0,509,0)...
+[    2.974331] _ReadCheckSpare: filled invalid page(0,511,0)...
+[    2.980923] [ND]before second 488 440.
+[    3.125378] [NE]smart->version:aaaaaa01;
+[    3.129848] [NE]smart->total_recv_read_sectors:558374;
+[    3.135676] [NE]smart->total_recv_write_sectors:405720;
+[    3.141596] [NE]smart->total_real_read_pages:56935;
+[    3.147226] [NE]smart->total_real_write_pages:51858;
+[    3.152856] [NE]smart->total_recv_discard_sectors:28672;
+[    3.158960] [NE]smart->total_real_discard_sectors:28672;
+[    3.164976] [NE]smart->total_recv_read_claim_pages:0;
+[    3.170809] [NE]smart->total_gc_times:0;
+[    3.175274] [NE]smart->total_gc_pages:0;
+[    3.179737] [NE]smart->total_wl_times:0;
+[    3.184315] [NE]smart->total_real_read_error_pages:0;
+[    3.190042] [NE]smart->total_real_write_error_pages:0;
+[    3.195960] [NE]smart->total_normal_power_cycles:13;
+[    3.201592] [NE]smart->total_unusual_power_cycles:0;
+[    3.207212] [NE]smart->max_block_erase_times:0;
+[    3.212465] [NE]smart->min_block_erase_times:0;
+[    3.217604] [NE]smart->max_block_used_counter:0;
+[    3.222953] [NE]smart->min_block_used_counter:0;
+[    3.228189] [NE]smart->read_reclaim_utc:0;
+[    3.232856] [NE]smart->cross_talk_times:0;
+[    3.282216] [NE]recover_phy_page_mapping no used page 37!!
+[    3.288418] [ND]recover 274 37
+[    3.292043] [ND] nand3.5 version:0001 date:Dec 14 2017 09:06:16
+[    3.298726] [ND]zone->nand_chip->blk_per_chip: 489 
+[    3.304263] [ND]zone->nand_chip->bytes_per_page: 4096 
+[    3.310086] [ND]zone->nand_chip->pages_per_blk: 64 
+[    3.315612] [ND]zone->nand_chip->max_erase_times: 3000 
+[    3.321636] [ND]zone->nand_chip->support_read_reclaim: 0 
+[    3.327737] [ND]zone->test: 0 
+[    3.331349] [ND]zone->zone_no: 0 
+[    3.335136] [ND]zone->zone_attr: 0 
+[    3.339118] [ND]zone->blocks: 488 
+[    3.343014] [ND]zone->bad_block: 1 
+[    3.347102] [ND]zone->logic_cap_in_sects: 225280 
+[    3.352444] [ND]zone->backup_cap_in_sects: 24576 
+[    3.357880] [ND]zone->free_block_num: 313 
+[    3.362546] [ND]zone->gc_strategy.start_gc_free_blocks: 9 
+[    3.368746] [ND]zone->gc_strategy.stop_gc_free_blocks: 32 
+[    3.375061] [ND]zone->gc_strategy.gc_page: 0 
+[    3.380016] [ND]zone->gc_strategy.process: 1 
+[    3.385066] [ND]zone->prio_gc.prio_type : 0 
+[    3.389915] [ND]zone->zone_start_phy_block->phy_block.Block_NO: 0 
+[    3.397001] [ND]zone->zone_end_phy_block->phy_block.Block_NO: 488 
+[    3.403982] [ND]zone->zone_phy_page_map_for_gc: c5a83c00 
+[    3.410202] [ND]zone->current_block.user_info: c5a7d400 
+[    3.416209] [ND]zone->current_block.block_info: c5aa2688 
+[    3.422429] [ND]zone->current_block.block_info->phy_block.Block_NO: 274 
+[    3.429978] [ND]zone->current_block.page_used: 37 
+[    3.435522] [ND]zone->current_block.block_info->block_used_count: 815 
+[    3.442889] [ND]zone->read_reclaim_complete: 0 
+[    3.448132] [ND]zone->temp_page_buf: c58ed000 
+[    3.453184] [ND]zone->max_erase_num: 2 
+[    3.457551] [ND]zone->cache.cache_totals: 0 
+[    3.462515] [ND]zone->cfg->nftl_dont_use_cache: 0 
+[    3.467943] [ND]zone->cfg->nftl_use_cache_sort: 1 
+[    3.473487] [ND]zone->cfg->nftl_support_gc_read_reclaim: 1 
+[    3.479783] [ND]zone->cfg->nftl_support_wear_leveling: 1 
+[    3.485897] [ND]zone->cfg->nftl_need_erase: 0 
+[    3.490948] [ND]zone->cfg->nftl_min_free_block_num: 19 
+[    3.496859] [ND]zone->cfg->nftl_gc_threshold_free_block_num: 8 
+[    3.503661] [ND]zone->cfg->nftl_min_free_block: 4 
+[    3.509090] [ND]zone->cfg->nftl_gc_threshold_ratio_numerator: 2 
+[    3.515983] [ND]zone->cfg->nftl_gc_threshold_ratio_denominator: 3 
+[    3.522964] [ND]zone->cfg->nftl_max_cache_num: 20 
+[    3.528497] [ND]zone->cfg->nftl_max_cache_write_num: 1 
+[    3.534417] [ND]zone->cfg->nftl_cross_talk: 0 
+[    3.539564] [ND]zone->cfg->nftl_read_claim_interval: 1296000 
+[    3.546061] [NE]smart->version:aaaaaa01;
+[    3.550534] [NE]smart->total_recv_read_sectors:558374;
+[    3.556347] [NE]smart->total_recv_write_sectors:405720;
+[    3.562268] [NE]smart->total_real_read_pages:57037;
+[    3.567897] [NE]smart->total_real_write_pages:51858;
+[    3.573527] [NE]smart->total_recv_discard_sectors:28672;
+[    3.579639] [NE]smart->total_real_discard_sectors:28672;
+[    3.585654] [NE]smart->total_recv_read_claim_pages:0;
+[    3.591486] [NE]smart->total_gc_times:0;
+[    3.595949] [NE]smart->total_gc_pages:0;
+[    3.600422] [NE]smart->total_wl_times:0;
+[    3.604991] [NE]smart->total_real_read_error_pages:0;
+[    3.610717] [NE]smart->total_real_write_error_pages:0;
+[    3.616635] [NE]smart->total_normal_power_cycles:13;
+[    3.622266] [NE]smart->total_unusual_power_cycles:0;
+[    3.627886] [NE]smart->max_block_erase_times:0;
+[    3.633138] [NE]smart->min_block_erase_times:0;
+[    3.638276] [NE]smart->max_block_used_counter:0;
+[    3.643626] [NE]smart->min_block_used_counter:0;
+[    3.648863] [NE]smart->read_reclaim_utc:0;
+[    3.653531] [NE]smart->cross_talk_times:0;
+[    3.658295] [ND]nftl ok!
+[    3.661226] [ND] panic block 273!
+[    3.665015] [ND] panic block 272!
+[    3.668909] [ND] panic block 271!
+[    3.672764] [ND]max_erase_times = 20000
+[    3.677235] [NAND]nand_dev add mbr
+[    3.681250] [NAND]nand_dev add env
+[    3.686032]  nanda: unknown partition table
+[    3.691044] [NAND]nand_dev add kernel1
+[    3.696030]  nandb:
+[    3.698655] [NAND]nand_dev add rootfs1
+[    3.703534]  nandc: unknown partition table
+[    3.708439] [NAND]nand_dev add kernel2
+[    3.713401]  nandd:
+[    3.715997] [NAND]nand_dev add rootfs2
+[    3.720830]  nande: unknown partition table
+[    3.725848] [NAND]nand_dev add misc
+[    3.730391]  nandf: unknown partition table
+[    3.735301] [NAND]nand_dev add private
+[    3.740229]  nandg: unknown partition table
+[    3.745142] [NAND]nand_dev add crashlog
+[    3.749752]  nandh: unknown partition table
+[    3.754790] [NAND]nand_dev add UDISK
+[    3.759417]  nandi: unknown partition table
+[    3.764440] [NAND]nand init end 
+[    3.768449] [rf_pm]: select module num is 10
+[    3.773322] [rf_pm]: module power1 name axp22_dldo1
+[    3.778849] [rf_pm]: module power1 vol 3300000
+[    3.784011] [rf_pm]: module power2 name axp22_dldo2
+[    3.789535] [rf_pm]: module power2 vol 3300000
+[    3.794697] [rf_pm]: module power3 name axp22_aldo1
+[    3.800235] [rf_pm]: module power3 vol 3300000
+[    3.805277] [rf_pm]: mod has no power_switch gpio
+[    3.810726] [rf_pm]: mod has no chip_en gpio
+[    3.815577] [rf_pm]: lpo_use_apclk: losc_out
+[    3.820656] [rf_pm]: set axp22_dldo1 to 3300000 v
+[    3.826099] [rf_pm]: enable axp22_dldo1.
+[    3.831120] [rf_pm]: set axp22_dldo2 to 3300000 v
+[    3.836646] [rf_pm]: enable axp22_dldo2.
+[    3.841652] [rf_pm]: set axp22_aldo1 to 3300000 v
+[    3.847175] [rf_pm]: enable axp22_aldo1.
+[    3.851696] [rf_pm]: mod info power switch -1
+[    3.856734] [rf_pm]: set losc_out 32k out
+[    3.861419] scene_lock_init name=rf_pm
+[    3.865947] [wifi_pm]: wifi gpio init is OK !!
+[    3.871077] [rfkill]: mod has no ls_int gpio
+[    3.876033] [rfkill]: mod has no pcm_ch gpio
+[    3.881141] [rfkill]: rfkill set power 0
+[    3.900057] AW2013_led_init start
+[    3.903993] aw2013_detect: adapter->nr = 0
+[    3.908653] aw2013_detect: addr = 45
+[    3.912905] twi_start()434 - [i2c0] START can't sendout!
+[    3.919269] twi_start()434 - [i2c0] START can't sendout!
+[    3.925538] twi_start()434 - [i2c0] START can't sendout!
+[    3.931913] twi_start()434 - [i2c0] START can't sendout!
+[    3.938172] twi_start()434 - [i2c0] START can't sendout!
+[    3.944546] twi_start()434 - [i2c0] START can't sendout!
+[    3.950825] twi_start()434 - [i2c0] START can't sendout!
+[    3.957189] twi_start()434 - [i2c0] START can't sendout!
+[    3.963459] twi_start()434 - [i2c0] START can't sendout!
+[    3.969671] detect ret -1
+[    3.972698] aw2013_detect:I2C connection might be something wrong 
+[    3.979674] aw2013_detect: adapter->nr = 1
+[    3.984451] aw2013_detect: adapter->nr = 2
+[    3.989110] [AW2013_led_init] Success to register AW2013 i2c driver.
+[    3.996993] sunxi_spi_chan_cfg()1376 - [spi-0] has no spi_regulator.
+[    4.004750] spi spi0: master is unqueued, this is deprecated
+[    4.011385] module template loaded
+[    4.015289] ws2812_spi_probe 
+[    4.018712] ws2812 init.
+[    4.021793] tun: Universal TUN/TAP device driver, 1.6
+[    4.027512] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    4.034601] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    4.062077] sunxi-ehci sunxi-ehci.1: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    4.071211] sunxi-ehci sunxi-ehci.1: new USB bus registered, assigned bus number 1
+[    4.080219] sunxi-ehci sunxi-ehci.1: irq 104, io mem 0xf1c1a000
+[    4.100034] sunxi-ehci sunxi-ehci.1: USB 0.0 started, EHCI 1.00
+[    4.100045] WRN:L2870(drivers/usb/sunxi_usb/udc/sunxi_udc.c):pdev is null
+[    4.114983] hub 1-0:1.0: USB hub found
+[    4.119275] hub 1-0:1.0: 1 port detected
+[    4.124196] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    4.151260] sunxi-ohci sunxi-ohci.1: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    4.159995] sunxi-ohci sunxi-ohci.1: new USB bus registered, assigned bus number 2
+[    4.168650] sunxi-ohci sunxi-ohci.1: irq 105, io mem 0xf1c1a400
+[    4.234454] hub 2-0:1.0: USB hub found
+[    4.238843] hub 2-0:1.0: 1 port detected
+[    4.243746] usbcore: registered new interface driver cdc_acm
+[    4.250159] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    4.259306] usbcore: registered new interface driver cdc_wdm
+[    4.265942] usbcore: registered new interface driver usbserial
+[    4.272543] usbserial: USB Serial Driver core
+[    4.277534] usbcore: registered new interface driver option
+[    4.283995] USB Serial support registered for GSM modem (1-port)
+[    4.291249] file system registered
+[    4.296388] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    4.304161] android_usb gadget: Number of LUNs=3
+[    4.309509]  lun0: LUN: removable file: (no medium)
+[    4.315047]  lun1: LUN: removable file: (no medium)
+[    4.320690]  lun2: LUN: removable file: (no medium)
+[    4.326482] android_usb gadget: android_usb ready
+[    4.332220] mousedev: PS/2 mouse device common for all mice
+[    4.338623] sunxikbd_script_init: key para not found, used default para. 
+[    4.347017] sunxi-rtc sunxi-rtc: rtc core: registered sunxi-rtc as rtc0
+[    4.354616] sunxi cedar version 0.1 
+[    4.358842] [cedar]: install start!!!
+[    4.363171] [cedar]: install end!!!
+[    4.369739] axp22_dcdc1: Failed to create debugfs directory
+[    4.377119] Bluetooth: Virtual HCI driver ver 1.3
+[    4.382572] Bluetooth: HCI UART driver ver 2.2
+[    4.387620] Bluetooth: HCI H4 protocol initialized
+[    4.393168] Bluetooth: HCILL protocol initialized
+[    4.398568] usbcore: registered new interface driver btusb
+[    4.404891] Bluetooth: Generic Bluetooth SDIO driver ver 0.1
+[    4.411616] axp22_dcdc3: Failed to create debugfs directory
+[    4.420384] [mmc]: SD/MMC/SDIO Host Controller Driver(v1.123 2017-01-11 15:04) Compiled in Mar 29 2018 at 09:51:40
+[    4.432097] [mmc]: get mmc1's sdc_power failed
+[    4.437137] [mmc]: MMC host used card: 0x2, boot card: 0x0, io_card 2
+[    4.445276] [mmc]: sdc1 set ios: clk 0Hz bm OD pm OFF vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    4.457921] sunxi_leds_fetch_sysconfig_para leds is not used in config
+[    4.465370] =========script_get_err============
+[    4.471073] usbcore: registered new interface driver usbhid
+[    4.477448] usbhid: USB HID core driver
+[    4.481819] zram: num_devices not specified. Using default: 1
+[    4.488383] zram: Creating 1 devices ...
+[    4.493435] Linux telephony interface: v1.00
+[    4.498474] usbcore: registered new interface driver snd-usb-audio
+[    4.505809] Enter ac108_init
+[    4.509135] ac108_i2c_detect:---1491, adapter-nr = 0
+[    4.514661] ac108_i2c_detect:---1491, adapter-nr = 0
+[    4.520385] ac108_i2c_detect:---1491, adapter-nr = 1
+[    4.526741] ac108_i2c_probe ,line:1417 
+[    4.531406] get ac108 regulator name failed 
+[    4.536241] i2c_id->driver_data : 0 
+[    4.540404] ac108_i2c_probe,line:1447 
+[    4.553542] ac108_i2c_detect:---1491, adapter-nr = 1
+[    4.559133] sunxi_i2c_do_xfer()985 - [i2c1] incomplete xfer (status: 0x20, dev addr: 0x35)
+[    4.568805] ac108_read error1
+[    4.572207] ac108_i2c_detect:---1491, adapter-nr = 2
+[    4.577711] ac108_i2c_detect:---1491, adapter-nr = 2
+[    4.584156] [ audio ] err:try to get audio_pa_en failed!
+[    4.590556] pa en request gpio failed!
+[    4.594999] [ audio ] err:try to get audio_linein_detect failed!
+[    4.602680] set pa ctrl gpio output okpa ctrl = 357
+[    4.608325] pa val = 0
+[    4.611057] set aw87183 off ------
+[    4.616271] codec_set_bias_level,line:2272, SND_SOC_BIAS_STANDBY
+[    4.625795] asoc: codec-aif1 <-> sunxi-codec mapping ok
+[    4.631977] asoc: codec-aif2 <-> sunxi-codec-aif2-dai mapping ok
+[    4.639006] asoc: codec-aif3 <-> sunxi-codec-aif2-dai mapping ok
+[    4.649794] asoc: ac108-pcm0 <-> i2s0 mapping ok
+[    4.655654] u32 classifier
+[    4.658755]     Actions configured
+[    4.662648] Netfilter messages via NETLINK v0.30.
+[    4.668069] nf_conntrack version 0.5.0 (1911 buckets, 7644 max)
+[    4.674961] ctnetlink v0.93: registering with nfnetlink.
+[    4.681093] IPVS: Registered protocols ()
+[    4.685681] IPVS: Connection hash table configured (size=4096, memory=32Kbytes)
+[    4.694133] IPVS: Creating netns size=840 id=0
+[    4.699198] IPVS: ipvs loaded.
+[    4.702943] IPv4 over IPv4 tunneling driver
+[    4.708147] gre: GRE over IPv4 demultiplexor driver
+[    4.713680] ip_gre: GRE over IPv4 tunneling driver
+[    4.719623] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    4.725773] TCP: cubic registered
+[    4.729549] Initializing XFRM netlink socket
+[    4.734414] NET: Registered protocol family 17
+[    4.739459] NET: Registered protocol family 15
+[    4.744720] Bluetooth: RFCOMM socket layer initialized
+[    4.750536] Bluetooth: RFCOMM ver 1.11
+[    4.754794] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    4.760888] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    4.768058] ThumbEE CPU extension supported.
+[    4.773017] Registering SWP/SWPB emulation handler
+[    4.779627] otg_wakelock_init: No USB transceiver found
+[    4.785670] sunxi-rtc sunxi-rtc: setting system clock to 1970-01-01 00:00:10 UTC (10)
+[    4.794495] ths_fetch_sysconfig_para: type err  device_used = 1. 
+[    4.801872] sunxi_cpu_budget_vftable_init: support only one vf_table
+[    4.809395] CPU Budget:Register notifier
+[    4.813960] CPU Budget:register Success
+[    4.818317] sunxi-budget-cooling sunxi-budget-cooling: Cooling device registered: thermal-budget-0
+[    4.830946] =========GPS========= :gsp not used in configuration
+[    4.837726] ALSA device list:
+[    4.841229]   #0: sndcodec
+[    4.844326]   #1: sndi2s0
+[    5.082228] VFS: Mounted root (squashfs filesystem) readonly on device 93:16.
+[    5.090646] Freeing init memory: 172K
+[    5.300177] init: Console is alive
+[    5.304581] init: - preinit -
+[    5.310068] ====codec_init_events===
+[    5.765938] mount_root: mounting /dev/root
+[    5.772751] mount_root: loading kmods from internal overlay
+[    5.878793] block: attempting to load /etc/config/fstab
+[    5.912899] block: extroot: not configured
+[    7.119899] procd: - early -
+[    7.300193] procd: - ubus -
+[    7.303888] procd (1): /proc/103/oom_adj is deprecated, please use /proc/103/oom_score_adj instead.
+[    7.354365] procd: - init -
+[    7.452009] android_usb: already disabled
+[    7.734509] [DISP]disp_module_init
+[    7.747554] [DISP] parser_disp_init_para,line:158:    fetch script data disp_init.screen2_output_type fail
+[    7.759837] [DISP] parser_disp_init_para,line:175:    fetch script data disp_init.screen2_output_mode fail
+[    7.771251] [DISP] parser_disp_init_para,line:236:    fetch script data disp_init.fb2_format fail
+[    7.781412] [DISP] parser_disp_init_para,line:241:    fetch script data disp_init.fb2_scaler_mode_enable fail
+[    7.792804] [DISP] parser_disp_init_para,line:246:    fetch script data disp_init.fb2_width fail
+[    7.803048] [DISP] parser_disp_init_para,line:251:    fetch script data disp_init.fb2_height fail
+[    7.824020] [fb_map_boot_logo]w=0,h=0,addr=0x0
+[    7.829100] vmalloc: allocation failure: 0 bytes
+[    7.834550] kmodloader: page allocation failure: order:0, mode:0xd2
+[    7.841679] [DISP] Fb_map_boot_logo,line:440:    Fb_map_boot_logo err: Fb_map_kernel failed!
+[    7.853174] [DISP]disp_module_init finish
+[    7.861634] Mali: Set gpu frequency to 384 MHz
+[    7.867198] Mali: Init Mali gpu successfully
+[    7.875583] Mali: Mali device driver loaded
+[    7.906786] adb_open
+[    7.909485] adb_bind_config
+[    7.913046] ep_matches, wrn: endpoint already claimed, ep(0xc06956cc, 0xc59988c0, ep1in-bulk)
+[    7.964215] [LCD]lcd_module_init
+[    7.970659] [LCD]open, step 0 finish
+[    8.010073] [LCD]open, step 1 finish
+[    8.070129] [LCD]open, step 2 finish
+[    8.180188] [LCD]open, step 3 finish
+[    8.190270] [LCD]lcd_module_init finish
+[    8.266065] dhd_module_init: in
+[    8.269776] ======== dhd_wlan_init_plat_data ========
+[    8.275552] dhd_wlan_init_gpio: GPIO(WL_REG_ON) = -1
+[    8.281329] dhd_wlan_init_gpio: GPIO(WL_HOST_WAKE) = 359
+[    8.287416] dhd_wlan_init_gpio: host_oob_irq: 7
+[    8.292665] dhd_wlan_init_gpio: host_oob_irq_flags=0x414
+[    8.298658] dhd_wifi_platform_load: Enter
+[    8.303282] Power-up adapter 'DHD generic adapter'
+[    8.308926] wifi_platform_set_power = 1
+[    8.313317] ======== PULL WL_REG_ON(-1) HIGH! ========
+[    8.319249] [wifi_pm]: wifi power on
+[    8.507775] android_usb gadget: high-speed config #1: android
+[    8.630066] wifi_platform_bus_enumerate device present 1
+[    8.636194] ======== Card detection to detect SDIO card! ========
+[    8.643221] [mmc]: sdc1 set ios: clk 0Hz bm PP pm UP vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    8.654674] [mmc]: sdc1 power_supply is null
+[    8.680042] [mmc]: sdc1 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    8.712394] [mmc]: *** sunxi_mci_dump_errinfo(L923): smc 1 err, cmd 52,  RTO !!
+[    8.721704] [mmc]: *** sunxi_mci_dump_errinfo(L923): smc 1 err, cmd 52,  RTO !!
+[    8.730153] [mmc]: sdc1 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    8.742998] [mmc]: sdc1 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    8.755318] [mmc]: *** sunxi_mci_dump_errinfo(L923): smc 1 err, cmd 8,  RTO !!
+[    8.763668] *******************Try sdio*******************
+[    8.770196] [mmc]: sdc1 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    8.790544] [mmc]: sdc1 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing SD-HS(SDR25) dt B
+[    8.801024] [mmc]: sdc1 set ios: clk 50000000Hz bm PP pm ON vdd 3.3V width 1 timing SD-HS(SDR25) dt B
+[    8.811692] [mmc]: sdc1 set ios: clk 50000000Hz bm PP pm ON vdd 3.3V width 4 timing SD-HS(SDR25) dt B
+[    8.823642] mmc0: new high speed SDIO card at address 0001
+[    8.830485] *******************sdio init ok*******************
+[    8.846611] bcmsdh_register: register client driver
+[    8.852272] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    8.857767] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    8.863314] bus num (host idx)=0, slot num (rca)=1
+[    8.868737] found adapter info 'DHD generic adapter'
+[    8.874519] sdioh_attach: set sd_f2_blocksize 128
+[    8.880048] dhdsdio_probe : no mutex held. set lock
+[    8.885763] F1 signature read @0x18000000=0x1541a9a6
+[    8.893254] F1 signature OK, socitype:0x1 chip:0xa9a6 rev:0x1 pkg:0x4
+[    8.901337] DHD: dongle ram size is set to 524288(orig 524288) at 0x0
+[    8.908723] dhd_conf_set_chiprev: chip=0xa9a6, chiprev=1
+[    8.914886] dhd_conf_set_conf_path_by_nv_path: config_path=/lib/firmware/config.txt
+[    8.923587] dhd_conf_read_config: Ignore config file /lib/firmware/config.txt
+[    8.932447] wl_create_event_handler(): thread:wl_event_handler:177 started
+[    8.932457] tsk Enter, tsk = 0xc4ee1410
+[    8.945445] p2p0: P2P Interface Registered
+[    8.950201] dhd_attach(): thread:dhd_watchdog_thread:178 started
+[    8.957137] dhd_attach(): thread:dhd_dpc:179 started
+[    8.962871] dhd_attach(): thread:dhd_rxf:17a started
+[    8.968612] dhd_deferred_work_init: work queue initialized 
+[    8.982570] Dongle Host Driver, version 1.201.59.9 (r506368)
+[    8.982579] Compiled in drivers/net/wireless/bcmdhd on Mar 29 2018 at 09:42:52
+[    8.997888] Register interface [wlan0]  MAC: 00:90:4c:11:22:33
+[    8.997893] 
+[    9.006368] dhd_prot_ioctl : bus is down. we have nothing to do
+[    9.013119] bcmsdh_oob_intr_unregister: Enter
+[    9.018149] bcmsdh_oob_intr_unregister: irq is not registered
+[    9.024671] dhd_txglom_enable: enable 0
+[    9.029128] dhd_conf_set_txglom_params: swtxglom=0, txglom_ext=0
+[    9.035928] dhd_conf_set_txglom_params: txglom_bucket_size=0
+[    9.042486] dhd_conf_set_txglom_params: txglomsize=0, deferred_tx_len=0, bus_txglom=-1
+[    9.051398] dhd_conf_set_txglom_params: tx_in_rx=1, tx_max_offset=0, txctl_tmo_fix=1
+[    9.060217] sdioh_set_mode: set txglom_mode to multi-desc
+[    9.066407] dhd_bus_devreset:  WLAN OFF DONE
+[    9.071315] wifi_platform_set_power = 0
+[    9.075674] ======== PULL WL_REG_ON(-1) LOW! ========
+[    9.081496] [wifi_pm]: wifi power off
+[    9.085682] dhdsdio_probe : the lock is released.
+[    9.091112] dhd_module_init: Exit err=0
+[    9.096448] =====ctp_fetch_sysconfig_para=====. 
+[    9.101728] ctp_fetch_sysconfig_para: ctp_power_ldo script_get_item err. 
+[    9.109486] ctp_fetch_sysconfig_para: ctp_power_ldo_vol script_get_item err. 
+[    9.117533] ctp_fetch_sysconfig_para: ctp_power_io script_get_item err. 
+[    9.125197] ctp_irq gpio number is 356
+[    9.180233] i2c-core: driver [gt82x] using legacy suspend method
+[    9.187164] i2c-core: driver [gt82x] using legacy resume method
+[    9.194038] twi_start()434 - [i2c0] START can't sendout!
+[    9.200399] twi_start()434 - [i2c0] START can't sendout!
+[    9.206654] twi_start()434 - [i2c0] START can't sendout!
+[    9.213740] twi_start()434 - [i2c0] START can't sendout!
+[    9.220035] twi_start()434 - [i2c0] START can't sendout!
+[    9.226373] twi_start()434 - [i2c0] START can't sendout!
+[    9.232633] twi_start()434 - [i2c0] START can't sendout!
+[    9.238977] twi_start()434 - [i2c0] START can't sendout!
+[    9.245233] twi_start()434 - [i2c0] START can't sendout!
+[    9.254237] xt_time: kernel timezone is -0000
+[    9.340238] twi_start()434 - [i2c0] START can't sendout!
+[    9.346604] twi_start()434 - [i2c0] START can't sendout!
+[    9.352905] twi_start()434 - [i2c0] START can't sendout!
+[    9.934594] EXT4-fs (nandi): mounted filesystem with ordered data mode. Opts: 
+[   10.340855] dhd_open: Enter c5282800
+[   10.344944] 
+[   10.344946] Dongle Host Driver, version 1.201.59.9 (r506368)
+[   10.344950] Compiled in drivers/net/wireless/bcmdhd on Mar 29 2018 at 09:42:52
+[   10.361442] wl_android_wifi_on in 1
+[   10.365414] wl_android_wifi_on in 2: g_wifi_on=0
+[   10.370668] wifi_platform_set_power = 1
+[   10.375112] ======== PULL WL_REG_ON(-1) HIGH! ========
+[   10.380927] [wifi_pm]: wifi power on
+[   10.690029] sdio_reset_comm():
+[   10.693622] [mmc]: sdc1 set ios: clk 50000000Hz bm PP pm ON vdd 3.3V width 4 timing SD-HS(SDR25) dt B
+[   10.706217] [mmc]: sdc1 set ios: clk 50000000Hz bm PP pm ON vdd 3.3V width 4 timing SD-HS(SDR25) dt B
+[   10.717669] [mmc]: sdc1 set ios: clk 150000Hz bm PP pm ON vdd 3.3V width 4 timing LEGACY(SDR12) dt B
+[   10.728608] [mmc]: sdc1 set ios: clk 150000Hz bm PP pm ON vdd 3.3V width 4 timing LEGACY(SDR12) dt B
+[   10.751938] [mmc]: sdc1 set ios: clk 150000Hz bm PP pm ON vdd 3.3V width 4 timing SD-HS(SDR25) dt B
+[   10.762312] [mmc]: sdc1 set ios: clk 50000000Hz bm PP pm ON vdd 3.3V width 4 timing SD-HS(SDR25) dt B
+[   10.772892] [mmc]: sdc1 set ios: clk 50000000Hz bm PP pm ON vdd 3.3V width 4 timing SD-HS(SDR25) dt B
+[   10.783363] sdioh_start: set sd_f2_blocksize 128
+[   10.788895] 
+[   10.788898] 
+[   10.788901] dhd_bus_devreset: == WLAN ON ==
+[   10.797223] F1 signature read @0x18000000=0x1541a9a6
+[   10.804671] F1 signature OK, socitype:0x1 chip:0xa9a6 rev:0x1 pkg:0x4
+[   10.812582] DHD: dongle ram size is set to 524288(orig 524288) at 0x0
+[   10.820090] dhd_conf_read_config: Ignore config file /lib/firmware/config.txt
+[   10.828207] dhd_conf_set_fw_name_by_chip: firmware_path=/lib/firmware/fw_bcm43438a1.bin
+[   10.837219] dhdsdio_download_firmware: set use_rxchain 0
+[   10.843318] dhdsdio_download_firmware: set txglomsize 40
+[   10.849311] Final fw_path=/lib/firmware/fw_bcm43438a1.bin
+[   10.855512] Final nv_path=/lib/firmware/nvram.txt
+[   10.860843] Final conf_path=/lib/firmware/config.txt
+[   11.021309] NVRAM version:  NVRAM file for BCM943430FSDNG_2 (rev P2xx for 43430 B0 FCBGA)
+[   11.037619] dhdsdio_write_vars: Download, Upload and compare of NVRAM succeeded.
+[   11.123141] dhd_bus_init: enable 0x06, ready 0x06 (waited 0us)
+[   11.129879] bcmsdh_oob_intr_register: Enter
+[   11.134642] bcmsdh_oob_intr_register: HW_OOB enabled
+[   11.140262] bcmsdh_oob_intr_register OOB irq=7 flags=0x4
+[   11.146463] bcmsdh_oob_intr_register: enable_irq_wake
+[   11.152197] bcmsdh_oob_intr_register: enable_irq_wake failed with -6
+[   11.160179] dhd_conf_set_fw_int_cmd: set WLC_SET_BAND 142 0
+[   11.166798] dhd_preinit_ioctls: Set tcpack_sup_mode 0
+[   11.175677] dhd_get_concurrent_capabilites: Get P2P failed (error=-23)
+[   11.183040] Firmware up: op_mode=0x0001, MAC=00:90:4c:c5:12:38
+[   11.189705] dhd_conf_set_country: set country CN, revision 0
+[   11.223758] Country code: CN (CN/0)
+[   11.228494] dhd_conf_set_fw_string_cmd: set roam_off 1
+[   11.242437] dhd_arp_offload_enable: failed to enabe ARP offload to 1, retcode = -23
+[   11.252678] dhd_arp_offload_set: failed to set ARP offload mode to 0x9, retcode = -23
+[   11.262564] dhd_conf_set_fw_string_cmd: set pkt_filter_mode 0
+[   11.276475] Firmware version = wl0: Jan 19 2018 14:03:06 version 7.45.96 (r WLTEST) FWID 01-99b1a0ac
+[   11.286820]   Driver: 1.201.59.9 (r506368)
+[   11.286824]   Firmware: wl0: Jan 19 2018 14:03:06 version 7.45.96 (r WLTEST) FWID 01-99b1a0ac 
+[   11.301627] dhd_txglom_enable: enable 1
+[   11.305983] dhd_conf_set_txglom_params: swtxglom=0, txglom_ext=0
+[   11.312851] dhd_conf_set_txglom_params: txglom_bucket_size=0
+[   11.319230] dhd_conf_set_txglom_params: txglomsize=40, deferred_tx_len=40, bus_txglom=-1
+[   11.328412] dhd_conf_set_txglom_params: tx_in_rx=1, tx_max_offset=0, txctl_tmo_fix=1
+[   11.337208] sdioh_set_mode: set txglom_mode to multi-desc
+[   11.343310] dhd_conf_set_disable_proptx: set disable_proptx 0
+[   11.351415] dhd_wlfc_hostreorder_init(): successful bdcv2 tlv signaling, 64
+[   11.360037] wl_android_wifi_on: Success
+[   11.403821] dhd_open: Exit ret=0
+[   13.230876] rgb_write_proc match:3 r:0 g:0 b:0
+[   13.235922] ws2812_send: r=0 g=0 b=0.
+[   13.240449] rgb_write_proc match:3 r:0 g:255 b:0
+[   13.245666] ws2812_send: r=0 g=255 b=0.
+[   13.492370] [rfkill]: rfkill set power 0
+[   14.513137] [rfkill]: rfkill set power 1
+[   14.885735] set AIF1_CLK 
+[   14.889028] codec_set_bias_level,line:2267, SND_SOC_BIAS_PREPARE
+[   14.895947] late_enable_dac,line:545
+[   14.900031] late_enable_dac,line:545
+[   14.904190] post:open:ac_headphone_event,line:642
+[   14.912531] set aw87318 on mode = 20 ------
+[   14.917305] codec_set_bias_level,line:2263, SND_SOC_BIAS_ON
+[   16.812632] codec_set_bias_level,line:2267, SND_SOC_BIAS_PREPARE
+[   16.819431] pre:close:ac_headphone_event,line:665
+[   16.824892] set aw87183 off ------
+[   16.828819] codec_set_bias_level,line:2272, SND_SOC_BIAS_STANDBY
+[  240.216880] __sunxi_compare_regs_ex err, line 377, pgroup is NULL
+[  244.333373] __sunxi_dump_regs_ex err, invalid para, start 0x00000000, end 0x00000000, buf 0xc4c54000
+[  247.813286] __sunxi_write_show err, line 552, pgroup is NULL
+[  677.767501] rgb_write_proc match:1 r:255 g:255 b:0
+[  684.207596] rgb_write_proc match:1 r:0 g:255 b:0
+[  691.931867] rgb_write_proc match:1 r:65 g:255 b:0

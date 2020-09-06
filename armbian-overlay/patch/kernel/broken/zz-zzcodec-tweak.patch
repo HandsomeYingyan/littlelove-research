@@ -1,0 +1,44 @@
+From dfbd2e36cd1ed0df081b42b023ec21e4c31e0a6e Mon Sep 17 00:00:00 2001
+From: Your Name <you@example.com>
+Date: Fri, 14 Aug 2020 20:32:48 +0800
+Subject: [PATCH] codec tweak
+
+---
+ arch/arm/boot/dts/sun8i-r16-xiaomi-littlelove.dts | 6 ++++--
+ sound/soc/sunxi/sun4i-i2s.c                       | 2 ++
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/sun8i-r16-xiaomi-littlelove.dts b/arch/arm/boot/dts/sun8i-r16-xiaomi-littlelove.dts
+index 0c15a11d0..ecfbd873e 100644
+--- a/arch/arm/boot/dts/sun8i-r16-xiaomi-littlelove.dts
++++ b/arch/arm/boot/dts/sun8i-r16-xiaomi-littlelove.dts
+@@ -290,9 +290,11 @@
+ };
+ 
+ &r_pio {
+-	wifi_pwrseq_pin_love: wifi_pwrseq_pin@0 {
+-		pins = "PL6";
++	codec_pwrseq_pin_love: codec_pwrseq_pin@0 {
++		pins = "PL5";
+ 		function = "gpio_out";
++		bias-disable;
++		output-high;
+ 	};
+ };
+ 
+diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+index 0cdb80486..30f2c45e8 100755
+--- a/sound/soc/sunxi/sun4i-i2s.c
++++ b/sound/soc/sunxi/sun4i-i2s.c
+@@ -295,6 +295,8 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 	case 24000:
+ 	case 16000:
+ 	case 12000:
++	case 12500:
++	case 6250:
+ 	case 8000:
+ 		clk_rate = 24576000;
+ 		break;
+-- 
+2.28.0
+
